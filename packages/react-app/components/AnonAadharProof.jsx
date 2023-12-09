@@ -39,15 +39,18 @@ import {
     return (
       <>
       <div>
-        {(anonAadhaar.status=='logged-out')&&<LogInWithAnonAadhaar />}
+        {<LogInWithAnonAadhaar />}
         
       </div>
       <div >
         {/* Render the proof if generated and valid */}
         {anonAadhaar?.status === "logged-in" && (
           <>
-            <p>✅ Proof is valid</p>
-            <p>{anonAadhaar.pcd.proof.modulus}</p>
+            {/* <p>✅ Proof is valid</p> */}
+            
+            <div className="mt-3">
+            <AnonAadhaarProof  code={JSON.stringify(anonAadhaar.pcd, null, 2)} />
+            </div>
           </>
           )}
           {
