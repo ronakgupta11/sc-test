@@ -15,7 +15,7 @@ const SocialConnectUI: React.FC<Props> = ({ isOpen, closeModal }) => {
 
   const getLookupAddress = useCallback(async () => {
     setLoading(true);
-    const addresses = await lookupAddress("9999999999");
+    const addresses = await lookupAddress("9999999945");
     setLoading(false);
     if (addresses) {
       setOdisRegistedAddresses(addresses);
@@ -103,7 +103,7 @@ const SocialConnectUI: React.FC<Props> = ({ isOpen, closeModal }) => {
 
                   {!loading && odisRegistedAddresses && (
                     <div className="text-sm flex flex-col">
-                      <span>PhoneNumber : 9999999999</span>
+                      <span>PhoneNumber : 9999999945</span>
                       <span>Address: {odisRegistedAddresses}</span>
                     </div>
                   )}
@@ -113,9 +113,9 @@ const SocialConnectUI: React.FC<Props> = ({ isOpen, closeModal }) => {
                       onClick={async () => {
                         setBtnLoading(true);
                         if (!odisRegistedAddresses) {
-                          await register("9999999999");
+                          await register("9999999945");
                         } else {
-                          await revoke("9999999999");
+                          await revoke("9999999945");
                         }
                         await getLookupAddress();
 
