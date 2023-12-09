@@ -20,7 +20,7 @@ export default function Home() {
         ? "Connect your wallet to use SocialConnect"
         : "Click on SocialConnect to get started"} */}
       <h1 onClick={handle}>home</h1>
-      <ConnectWallet/>
+      {/* <ConnectWallet/> */}
       
     </main>
     </>
