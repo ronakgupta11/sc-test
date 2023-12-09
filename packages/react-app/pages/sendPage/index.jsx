@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Card ,Button,Checkbox,Label,TextInput} from 'flowbite-react';
-const index = () => {
+import {walletContext} from  "../../context/walletContext"
+
+const Index = () => {
    const [phone,setPhone]=useState()
    const [amount,setAmount]=useState()
+   const {address} = useContext(walletContext)
    const handleSubmit=async ()=>{
 
    }
@@ -12,6 +15,7 @@ const index = () => {
     <Card className="  sm:w-sm md:w-sm lg:w-md m-5 w-full lg:w-6/12 justify-center align-middle ">
       <h5 className="text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
         Send Payment
+        add:{address}
       </h5>
       <div 
       style={{
@@ -51,4 +55,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

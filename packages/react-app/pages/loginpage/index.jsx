@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Checkbox, Label, TextInput,FileInput} from 'flowbite-react';
 import AnonAadharProof from '../../components/AnonAadharProof'
 import { phoneNumberExists } from '../../firebase';
-const index = ({loggedIn}) => {
+const Index = ({loggedIn}) => {
 
   const [phone,setPhone]=useState("")
   const [isPhone,setIsPhone]=useState("")
@@ -57,4 +57,4 @@ const index = ({loggedIn}) => {
   )
 }
 
-export default index
+export default Index

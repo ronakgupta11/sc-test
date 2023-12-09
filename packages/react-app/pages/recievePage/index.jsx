@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card } from 'flowbite-react'
-const index = () => {
+const Index = () => {
   return (
     <>
     <Card>
@@ -10,4 +10,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
