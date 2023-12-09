@@ -1,5 +1,5 @@
 import { useSocialConnect } from "@/SocialConnect/useSocialConnect";
-
+import {SafeContextProvider} from "../context/SafeContext"
 export default function Home() {
   const { account } = useSocialConnect();
 
