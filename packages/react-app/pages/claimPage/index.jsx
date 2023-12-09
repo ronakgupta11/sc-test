@@ -1,10 +1,11 @@
 import React from 'react'
 import { Card ,Button} from 'flowbite-react'
-const index = () => {
+const index = ({claimAmount,users,totalAmount}) => {
+
   return (
     <>
     <div 
-     className='flex justify-center align-middle border-black-300'
+     className='flex justify-center align-middle border-black-300 bg-blue-300'
     >
     <Card href="#" className=" flex sm:w-sm md:w-sm lg:w-md m-5 w-full lg:w-6/12 justify-center align-middle">
       <h5 className="text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
@@ -23,12 +24,20 @@ const index = () => {
         }
       }>
       <h5 className="text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
-        $1
+        ${claimAmount>0||0.2} 
       </h5>
+      
       </div>
       <div 
       style={{alignSelf:"center"}}>
       <Button className='bg-green-500 ' >Claim!</Button>
+      </div>
+      <div>
+        <Card>
+            <h5 className='text-l text-center font-bold tracking-tight text-gray-900 dark:text-white'>
+                So Far Today : {users||"500"} users recieved {totalAmount||"$1000"}
+            </h5>
+        </Card>
       </div>
     </Card>
     </div>
