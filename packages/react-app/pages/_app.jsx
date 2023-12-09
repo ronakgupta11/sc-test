@@ -6,6 +6,7 @@ import { SessionProvider } from "next-auth/react";
 // import type { AppProps } from "next/app";
 import { WagmiConfig, configureChains, createConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
+import { AnonAadhaarProvider } from "anon-aadhaar-react";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 // import { SafeContextProvider } from "@/context/SafeContext";
@@ -35,7 +36,8 @@ const wagmiConfig = createConfig({
 
 function App({ Component, pageProps }) {
   return (
-    <WagmiConfig config={wagmiConfig}>
+    <AnonAadhaarProvider _appId="164273485720065496641300171009944995763348045824">
+     <WagmiConfig config={wagmiConfig}>
       <RainbowKitProvider chains={chains} appInfo={appInfo} coolMode={true}>
         <SessionProvider>
 
@@ -45,6 +47,8 @@ function App({ Component, pageProps }) {
         </SessionProvider>
       </RainbowKitProvider>
     </WagmiConfig>
+    </AnonAadhaarProvider>
+    
   );
 }
 
