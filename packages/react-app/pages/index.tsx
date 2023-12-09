@@ -15,7 +15,7 @@ export default function Home() {
       {/* {!account
         ? "Connect your wallet to use SocialConnect"
         : "Click on SocialConnect to get started"} */}
-      
+      <h1>home</h1>
     </main>
     </>
   );
