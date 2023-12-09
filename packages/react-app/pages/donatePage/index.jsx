@@ -1,6 +1,7 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { Card,TextInput,Label,Button } from 'flowbite-react'
 const index = () => {
+  const [amount,setAmount] = useState(0)
   return (
     <>
       <div className='flex justify-center border-black-300'>
@@ -15,14 +16,7 @@ const index = () => {
         alignItems:"center"
       }}>
       <form className="flex max-w-md flex-col gap-4 w-full ">
-      <div >
-        <div className="mb-2 block">
-          <Label htmlFor="email1" value="Phone No." />
-        </div>
-        <TextInput id="email1" 
-         onChange={(e)=>setPhone(e.target.value)}
-        type="email" placeholder="+91" required />
-      </div>
+
       <div>
         <div className="mb-2 block">
           <Label htmlFor="password1" value="Amount" />

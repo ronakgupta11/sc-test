@@ -2,7 +2,7 @@
 import { SocialConnectIssuer } from "@/SocialConnect";
 import { RPC } from "@/SocialConnect/utils";
 import { AuthenticationMethod } from "@celo/identity/lib/odis/query";
-import { JsonRpcProvider, Wallet } from "ethers";
+import { JsonRpcProvider,getDefaultProvider, Wallet } from "ethers";
 import { NextApiRequest, NextApiResponse } from "next";
 
 // Define the response type for the register function

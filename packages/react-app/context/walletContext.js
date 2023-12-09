@@ -18,13 +18,13 @@ const WalletContextProvider = ({children})=>{
 
 
 
-const loginWeb3Auth = async ()=>{
+const loginWeb3Auth = async (pass)=>{
 const personalWallet = new LocalWallet();
 // await personalWallet.generate();
 await personalWallet.loadOrCreate({
-  strategy:"encryptedJson",password:"123456"
+  strategy:"encryptedJson",password:pass
 });
-await personalWallet.save({strategy:"encryptedJson",password:"123456"});
+await personalWallet.save({strategy:"encryptedJson",password:pass});
 
 // Setup the Smart Wallet configuration
 const config= {
@@ -50,7 +50,7 @@ const address = personalWallet.ethersWallet.address
 setAddress(address)
 setWallet(personalWallet)
 setSmartWallet(wallet)
-// return {address}
+return address
 }
 
 

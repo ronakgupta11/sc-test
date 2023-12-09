@@ -30,7 +30,7 @@ const index = ({loggedIn}) => {
        justifyContent:"center"
     }}
    >
-   <form 
+   <div
     style={{
         border:'1px solid black',
         width:"100%",
@@ -48,10 +48,10 @@ const index = ({loggedIn}) => {
       </div>
     
       <div>
-        <AnonAadharProof phoneNo={"9007298206"} isPhoneNo={isPhone}/>
+        <AnonAadharProof phoneNo={phone} isPhoneNo={isPhone}/>
       </div>
       
-    </form>
+    </div>
    </div>
    </>
   )
