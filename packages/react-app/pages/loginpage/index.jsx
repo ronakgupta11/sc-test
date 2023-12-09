@@ -18,6 +18,9 @@ const index = ({loggedIn}) => {
     
     }
   },[phone])
+
+
+
   return (
    <>
    <div 
@@ -40,17 +43,14 @@ const index = ({loggedIn}) => {
         </div>
         <TextInput 
          onChange={(e)=>setPhone(e.target.value)}
-        id="base" type="email" placeholder="+91" required />
+        id="base" type="text" placeholder="+91" required />
 
       </div>
     
       <div>
         <AnonAadharProof phoneNo={"9007298206"} isPhoneNo={isPhone}/>
       </div>
-      <div className="flex items-center gap-2">
-        <Checkbox id="remember" />
-        <Label htmlFor="remember">Remember me</Label>
-      </div>
+      
     </form>
    </div>
    </>
