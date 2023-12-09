@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Card,TextInput,Label,Button } from 'flowbite-react'
-const index = () => {
+const Index = () => {
   const [amount,setAmount] = useState(0)
   return (
     <>
@@ -36,4 +36,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
