@@ -3,6 +3,14 @@ import celoGroups from "@celo/rainbowkit-celo/lists";
 import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import { SessionProvider } from "next-auth/react";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { BaseGoerli } from "@thirdweb-dev/chains";
+
+import {
+  smartWallet,
+  localWallet
+} from "@thirdweb-dev/react";
+import { WalletContextProvider } from "../context/walletContext";
 // import type { AppProps } from "next/app";
 import { WagmiConfig, configureChains, createConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
@@ -24,6 +32,12 @@ const connectors = celoGroups({
   appName: (typeof document === "object" && document.title) || "Your App Name",
 });
 
+const config = {
+  factoryAddress: "0xdA24263fFDB0EE1a5fcDE9076A274d5E9C2cC895",
+  gasless: true,
+}
+
+const walletConfig = localWallet()
 const appInfo = {
   appName: "Celo Composer",
 };
@@ -36,18 +50,24 @@ const wagmiConfig = createConfig({
 
 function App({ Component, pageProps }) {
   return (
+    <ThirdwebProvider supportedWallets={[smartWallet(walletConfig, config),]} activeChain= {BaseGoerli}clientId="7f2127dd415d652bbc52100bae279f8e">
+<WalletContextProvider>
+
     <AnonAadhaarProvider _appId="164273485720065496641300171009944995763348045824">
      <WagmiConfig config={wagmiConfig}>
-      <RainbowKitProvider chains={chains} appInfo={appInfo} coolMode={true}>
+      {/* <RainbowKitProvider chains={chains} appInfo={appInfo} coolMode={true}> */}
         <SessionProvider>
 
           <Layout>
             <Component {...pageProps} />
           </Layout>
         </SessionProvider>
-      </RainbowKitProvider>
+      {/* </RainbowKitProvider> */}
     </WagmiConfig>
+
     </AnonAadhaarProvider>
+    </WalletContextProvider>
+    </ThirdwebProvider>
     
   );
 }
