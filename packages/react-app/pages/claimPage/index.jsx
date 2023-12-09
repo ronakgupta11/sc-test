@@ -5,7 +5,7 @@ const index = ({claimAmount,users,totalAmount}) => {
   return (
     <>
     <div 
-     className='flex justify-center align-middle border-black-300 bg-blue-300'
+     className='flex justify-center align-middle border-black-300 bg-blue-300 m-4'
     >
     <Card href="#" className=" flex sm:w-sm md:w-sm lg:w-md m-5 w-full lg:w-6/12 justify-center align-middle">
       <h5 className="text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
@@ -35,7 +35,7 @@ const index = ({claimAmount,users,totalAmount}) => {
       <div>
         <Card>
             <h5 className='text-l text-center font-bold tracking-tight text-gray-900 dark:text-white'>
-                So Far Today : {users||"500"} users recieved {totalAmount||"$1000"}
+                So Far Today :  {totalAmount||"$1000"} was divided among {users||"50000"} Users
             </h5>
         </Card>
       </div>

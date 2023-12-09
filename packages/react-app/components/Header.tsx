@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useConnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
-
+import Link from "next/link";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [hideConnectBtn, setHideConnectBtn] = useState(false);
@@ -69,6 +69,15 @@ export default function Header() {
                       Home
                     </a>
                   </div>
+                  <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a
+                      href="#"
+                      className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900"
+                    >
+                      <Link href={'./sendPage'} > Send </Link>
+                    </a>
+                  </div>
+
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   {!hideConnectBtn && (
@@ -77,6 +86,30 @@ export default function Header() {
                     />
                   )}
                 </div>
+                <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a
+                      href="#"
+                      className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900"
+                    >
+                      <Link href={'./sendPage'} > Recieve </Link>
+                    </a>
+                  </div>
+                  <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a
+                      href="#"
+                      className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900"
+                    >
+                      <Link href={'./claimPage'} > Claim </Link>
+                    </a>
+                  </div>
+                  <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a
+                      href="#"
+                      className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900"
+                    >
+                      <Link href={'./donatePage'} > Donate </Link>
+                    </a>
+                  </div>
                 {connected && account && (
                   <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                     <button
@@ -100,6 +133,28 @@ export default function Header() {
                 >
                   Home
                 </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="./claimPage"
+                  className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
+                >
+                  Claim
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="./sendPage"
+                  className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
+                >
+                  Send
+                </Disclosure.Button>
+                <Disclosure.Button
+                  as="a"
+                  href="./recievePage"
+                  className="block border-l-4 border-black py-2 pl-3 pr-4 text-base font-medium text-black"
+                >
+                  Recieve
+                </Disclosure.Button>
+                
                 {/* Add here your custom menu elements */}
               </div>
             </Disclosure.Panel>
