@@ -4,7 +4,7 @@ import { RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import { SessionProvider } from "next-auth/react";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
-import { BaseGoerli } from "@thirdweb-dev/chains";
+import { BaseGoerli,CeloAlfajoresTestnet } from "@thirdweb-dev/chains";
 
 import {
   smartWallet,
@@ -50,7 +50,7 @@ const wagmiConfig = createConfig({
 
 function App({ Component, pageProps }) {
   return (
-    <ThirdwebProvider supportedWallets={[smartWallet(walletConfig, config),]} activeChain= {BaseGoerli}clientId="7f2127dd415d652bbc52100bae279f8e">
+    <ThirdwebProvider supportedWallets={[smartWallet(walletConfig, config),]} supportedChains= {[BaseGoerli]}clientId="7f2127dd415d652bbc52100bae279f8e">
 <WalletContextProvider>
 
     <AnonAadhaarProvider _appId="164273485720065496641300171009944995763348045824">

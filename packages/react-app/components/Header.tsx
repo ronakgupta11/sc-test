@@ -2,7 +2,8 @@ import { useSocialConnect } from "@/SocialConnect/useSocialConnect";
 import SocialConnectUI from "@/components/SocialConnectUI";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+// import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { ConnectWallet } from "@thirdweb-dev/react";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -76,13 +77,13 @@ export default function Header() {
                   </div>
 
                 </div>
-                {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   {!hideConnectBtn && (
-                    <ConnectButton
-                      showBalance={{ smallScreen: true, largeScreen: false }}
+                    <ConnectWallet
+                     
                     />
                   )}
-                </div> */}
+                </div>
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
 
                       <Link className="inline-flex items-center border-b-2 border-black px-1 pt-1 text-sm font-medium text-gray-900" href={'./sendPage'} > Recieve </Link>

@@ -4,7 +4,7 @@ import { createContext,useEffect,useState } from "react";
 import { ethers } from 'ethers'
 import { LocalWallet, SmartWallet } from "@thirdweb-dev/wallets";
 const walletContext = createContext()
-import { BaseGoerli } from "@thirdweb-dev/chains";
+import { BaseGoerli,CeloAlfajoresTestnet } from "@thirdweb-dev/chains";
 
 
 
@@ -47,6 +47,7 @@ console.log(isSaved)
 // });
 // console.log(walletload)
 const address = personalWallet.ethersWallet.address
+
 setAddress(address)
 setWallet(personalWallet)
 setSmartWallet(wallet)

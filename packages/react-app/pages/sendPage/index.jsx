@@ -2,11 +2,36 @@ import React, { useContext, useState } from 'react'
 import { Card ,Button,Checkbox,Label,TextInput} from 'flowbite-react';
 import {walletContext} from  "../../context/walletContext"
 
+
 const Index = () => {
    const [phone,setPhone]=useState()
    const [amount,setAmount]=useState()
-   const {address} = useContext(walletContext)
+   const {address,wallet} = useContext(walletContext)
+
+
+   const lookupAddress = async (identifier) => {
+    if (true) {
+      let response= await fetch(
+        `/api/socialconnect/lookup?${new URLSearchParams({
+          handle: identifier,
+          identifierType: "tel",
+        })}`,
+        {
+          method: "GET",
+        }
+      );
+
+      let lookupResponse = await response.json();
+      if (lookupResponse.accounts.length > 0) {
+        return lookupResponse.accounts[0];
+      }
+    }
+  };
+
    const handleSubmit=async ()=>{
+    const destAddresss = await lookupAddress(phone);
+
+
 
    }
   return (
@@ -30,7 +55,7 @@ const Index = () => {
         </div>
         <TextInput id="email1" 
          onChange={(e)=>setPhone(e.target.value)}
-        type="email" placeholder="+91" required />
+        type="text" placeholder="+91" required />
       </div>
       <div>
         <div className="mb-2 block">
